@@ -1,0 +1,104 @@
+.content {
+    padding: 25px;
+}
+.napredak {
+    width: 225px;
+    height: 61px;
+    position: absolute;
+    right: 70%;
+    top: 13%;
+}
+.tekst{
+    font-size: 14px;
+    font-weight: bold;
+}
+#detalji{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+#progresLjubicasti{
+    color:#fff;
+    background-color: mediumpurple;
+    height:24px;
+    width:110px;
+    padding:0.01em 16px;
+    border-radius:16px;
+}
+.okvir{
+    color: #000;
+    border-radius:16px;
+    width: 200px;
+    background-color:#f1f1f1;
+    border: 1px solid black;
+}
+.pom {
+    display:inline-block;
+}
+.kod {
+    margin-left: 2cm;
+    text-align: right;
+    width:1.5cm; 
+}
+.sig {
+    margin-left: 3cm;
+    text-align: right;
+}
+.datum {
+    width: 1.5cm;
+    text-align: center;
+}
+#dalje:hover{
+    background-color: black;
+    color: whitesmoke;
+  }
+#natrag:hover {
+    background-color: rgb(170, 164, 164);
+  }
+input[type=submit] {
+    border: 1px solid;
+    width: 70px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: 35%;
+    top: 5px;
+    border-radius: 4px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+#dalje {
+    color: white;
+    background-color: #4158d0;
+}
+#natrag {
+    color: #4158d0;
+    background-color: white;
+}
+@media only screen and (max-width: 800px) {
+    #labelaKod {
+        margin-top: 20px;
+    }
+    .kod {
+        margin-right: 200px;
+    }
+    .mrvica {
+        padding-left: 200px;
+    }
+    .poravnanje {
+        margin-left: 30px;
+        margin-left: 30px;
+    }
+    .content {
+        padding-left: 200px;
+    }
+}

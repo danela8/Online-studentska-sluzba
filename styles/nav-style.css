@@ -1,0 +1,78 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+.ikona {
+    width: 4px;
+    height: 4px;
+}
+#profilna{
+    display: flex;
+}
+h1{
+    color: indigo;
+
+}
+.content {
+    max-width: auto;
+    margin: auto;
+  }
+.nana {
+    margin: 0px;
+    padding: 0px; 
+    list-style: none;
+    display: inline-block;
+    align-self: center;
+}
+.pointer{
+    cursor: pointer
+}
+.nana li{
+    float: left;
+    width: 200px;
+    height: 30px;
+    background-color:mediumpurple;
+    border: rgb(64, 0, 94);
+    opacity: 1;
+    line-height: 15px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-right: 5px;
+    position: relative;
+    left: 0%;
+    cursor: pointer;
+    padding-top: 10px;
+}
+.nana li a{
+    text-decoration: none;
+    color: indigo;
+    display: block;
+    text-align: center
+}
+
+.nana li a:hover {
+    background-color: rgb(171, 142, 230);
+    color: white;
+}
+.nana li ul li {
+    display: none;
+}
+.nana li:hover ul li{
+    display: block;
+    position: relative;
+    left: 0%;
+    width: 120px;
+    height: 30px;
+}
+.dugme {
+    background-color: mediumpurple; 
+    border: none;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    color:indigo;
+    align-self: right;
+    border-radius: 5px;
+    border: 1px solid black;
+  }

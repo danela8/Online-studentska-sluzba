@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upisni list</title>
+    <script src="../upis.js"></script>
+    <link rel="stylesheet" href="../styles/upis.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="icon" href="../icons/etf_logo.svg" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../navigation.js"></script>
+</head>
+
+<body>
+    <nav class="nav-area">
+        <ul>
+            <li id="profil"><a onclick="promijeniLokaciju('profil.html')" href="#"><span
+                        class="fas fa-user-graduate"></span>
+                    Profil</a></li>
+            <li id="dokumenti">
+                <a href="#"><span class="fas fa-file"></span> Dokumenti</a>
+                <ul>
+                    <li><a onclick="promijeniLokaciju('upis.html')" href="#">Upisni list</a></li>
+                    <li><a onclick="promijeniLokaciju('ugovor.html')" href="#">Ugovor o učenju</a></li>
+                    <li><a onclick="promijeniLokaciju('potvrda.html')" href="#">Ovjerena potvrda</a></li>
+                </ul>
+            </li>
+            <li id=" placanje"><a onclick="promijeniLokaciju('placanje.html')" href="#"><span
+                        class="fas fa-credit-card"></span> Plaćanje</a></li>
+            <li id="pitanje"><a onclick="promijeniLokaciju('pitanje.html')" href="#"><span
+                        class="fas fa-comments"></span> Forum</a></li>
+            <li id="odjava"><a href="#" onclick="odjava()"><span class="fas fa-window-close"></span> Odjava</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item mrvica"> <a href="#">Dokumenti</a></li>
+            <li class="breadcrumb-item active" aria-current="page">UPISNI LIST</li>
+        </ol>
+    </nav>
+    <div class="content">
+        <h2 id="naslov" style="margin-left: 20%;">Upisni list</h2>
+        <form class="forma">
+            <div class="part">
+                <div class="flex">
+                    <div><label class="a">Ime</label></div>
+                    <div><input class="b" type="text" id="ime"></div>
+                </div> <br> <br>
+                <div class="flex">
+                    <div><label class="a">Prezime</label></div>
+                    <div><input class="b" type="text" id="prezime"></div>
+                </div> <br> <br>
+                <div class="flex">
+                    <div><label class="a">Jedinstveni matični broj</label></div>
+                    <div><input class="b" type="number" id="jmbg"></div>
+                </div>
+                <br> <br>
+                <div class="flex">
+                    <div><label class="a" for="datumrodj">Datum rođenja</label></div>
+                    <div><input class="b" type="date" id="datumrodj"></div>
+                </div>
+                <br> <br>
+                <div class="flex">
+                    <div><label class="a">Mjesto rođenja</label></div>
+                    <div><input class="b" type="text" id="mjestorodj"></div>
+                </div> <br>
+                <br>
+                <div class="flex">
+                    <div><label class="a">Mjesto prebivališta</label></div>
+                    <div><input class="b" type="text" id="mjestopreb"></div>
+                </div>
+                <br> <br>
+                <div class="flex">
+                    <div><label class="a">Adresa stanovanja u toku studiranja</label></div>
+                    <div><input class="b" type="text" id="adresa"></div>
+                </div>
+                <br>
+                <br>
+                <div class="flex">
+                    <div><label class="a">Državljanstvo</label></div>
+                    <div><input class="b" type="text" id="drzav"></div>
+                </div> <br> <br>
+            </div>
+            <hr>
+            <div class="part">
+                <div>
+                    <div><label class="a">Školska godina u koju se upisuje</label></div>
+                    <div><label class="c">20</label><input class="c" type="number" form="00" placeholder="21" id="1"
+                            disabled>
+                        <label class="c">/</label><input id="2" class="c" type="number" form="00" placeholder="22"
+                            disabled>
+                    </div>
+                </div> <br>
+                <div class="flex">
+                    <div><label class="a">Smjer</label></div>
+                    <div>
+                        <select name="smjer" id="smjer" class="b">
+                            <option id="aie" value="aie" selected>Automatika i elektronika</option>
+                            <option id="ri" value="ri">Računarstvo i informatika</option>
+                            <option id="ee" value="ee">Elektroenergetika</option>
+                            <option id="tk" value="tk">Telekomunikacije</option>
+                        </select>
+                    </div>
+                </div>
+                <br> <br>
+                <div class="flex">
+                    <div><label class="a">Koju godinu studija upisujete</label></div>
+                    <div>
+                        <div class="d" id="godd">
+                            <label>1</label>
+                            <input name="god" type="radio"> <label>2</label>
+                            <input name="god" type="radio"> <label>3</label>
+                            <input name="god" type="radio"> <label>4</label>
+                            <input name="god" type="radio"> <label>5</label>
+                            <input name="god" type="radio">
+                        </div>
+                    </div>
+                </div>
+                <br> <br>
+                <div class="flex">
+                    <div><label class="a">Koji semestar upisujete</label></div>
+                    <div>
+                        <div class="e" id="semm">
+                            <label>I</label>
+                            <input name="sem" type="radio"> <label>II</label>
+                            <input name="sem" type="radio"> <label>III</label>
+                            <input name="sem" type="radio"> <label>IV</label>
+                            <input name="sem" type="radio"> <label id="l4">V</label>
+                            <input name="sem" type="radio"> <label id="l5">VI</label>
+                            <input name="sem" type="radio">
+                        </div>
+                    </div>
+                </div>
+                <br> <br>
+                <div><label class="a"><b>Indikator upisa</b> <br> <small>1) upisuje godinu prvi put; 2) uslovno upisuje
+                            godinu;
+                            <br>
+                            3) ponavlja godinu; 4) polaganje nepoloženih ispita;
+                            <br>
+                            5) prijelaz sa drugog fakulteta; 6) prijelaz sa smjera na smjer</small></label></div>
+                <div>
+                    <div class="f">
+                        <label>1</label>
+                        <input name="up" type="radio"> <label>2</label>
+                        <input name="up" type="radio"> <label>3</label>
+                        <input name="up" type="radio"> <label>4</label>
+                        <input name="up" type="radio"> <label>5</label>
+                        <input name="up" type="radio"> <label>6</label>
+                        <input name="up" type="radio">
+                    </div>
+                </div>
+                <br> <br>
+                <div class="flex">
+                    <div><label class="a">Status studenta</label></div>
+                    <div>
+                        <div class="g" id="status">
+                            <input type="radio" name="std" id="red" value="red"> <label
+                                style="padding-right: 4px;">Redovan
+                                student</label>
+                            <input type="radio" name="std" id="samof"> <label>Samofinansirajući student</label>
+                        </div>
+                    </div>
+                </div>
+                <br> <br>
+            </div>
+        </form> <br>
+        <input type="submit" value="Uvezi podatke sa računa" id="uvezi" class="i" onclick="uvezi()">
+        <input type="submit" value="Nastavi" id="nastavi" class="j" onclick="abc(); return;">
+        <br><br>
+    </div>
+    <footer id="faxInfo">
+        <img src="../icons/footerlogo.jpg">
+        <div>
+            Elektrotehnički fakultet Sarajevo<br>
+            Univerzitet u Sarajevu<br>
+            Zmaja od Bosne bb<br>
+            Kampus Univerziteta u Sarajevu<br>
+            71000 Sarajevo<br>
+            Bosna i Hercegovina<br>
+            Tel: +387 33 250 700<br>
+            Fax: +387 33 250 725
+        </div>
+    </footer>
+</body>
+
+</html>

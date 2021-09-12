@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../styles/checkout.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="icon" href="../icons/etf_logo.svg" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../checkout.js"></script>
+    <script src="../navigation.js"></script>
+</head>
+
+<body>
+    <nav class="nav-area">
+        <ul>
+            <li id="profil"><a onclick="promijeniLokacijuCheckout('profil.html')" href="#"><span
+                        class="fas fa-user-graduate"></span>
+                    Profil</a></li>
+            <li id="dokumenti">
+                <a href="#"><span class="fas fa-file"></span> Dokumenti</a>
+                <ul>
+                    <li><a onclick="promijeniLokacijuCheckout('upis.html')" href="#">Upisni list</a></li>
+                    <li><a onclick="promijeniLokacijuCheckout('ugovor.html')" href="#">Ugovor o učenju</a></li>
+                    <li><a onclick="promijeniLokacijuCheckout('potvrda.html')" href="#">Ovjerena potvrda</a></li>
+                </ul>
+            </li>
+            <li id=" placanje"><a onclick="promijeniLokacijuCheckout('placanje.html')" href="#"><span
+                        class="fas fa-credit-card"></span> Plaćanje</a></li>
+            <li id="pitanje"><a onclick="promijeniLokacijuCheckout('pitanje.html')" href="#"><span
+                        class="fas fa-comments"></span> Forum</a></li>
+            <li id="odjava"><a href="#" onclick="odjava()"><span class="fas fa-window-close"></span> Odjava</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item mrvica"> <a href="#">Plaćanje</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+    </nav>
+    <div class="content">
+        <div class="okvir">
+            <div id="progresLjubicasti"></div>
+        </div>
+        <br>
+        <div id="detalji">
+            <div class="tekst">Detalji uplate </div>
+            <div class="tekst">Detalji kartice</div>
+        </div>
+    </div>
+    <br> <br> <br>
+    <div class="content">
+        <div class="pom poravnanje">
+            <label for="brojKartice"><big> Broj kreditne kartice</big></label> <br> <br>
+            <input type="number" class="brojKartice" maxlength="16" minlength="16" required
+                data-mask="0000 0000 0000 0000" placeholder="Broj kartice">
+        </div>
+        <div class="pom">
+            <label for="kod" class="kod" id="labelaKod"><big> Sigurnosni kod</big></label> <br> <br>
+            <input required type="number" id="vpc" class="kod" maxlength="3" minlength="3" data-mask="000"
+                placeholder="xxx">
+        </div> <br> <br> <br>
+        <div class="poravnanje">
+            <label for="datum""><big>Datum isteka kartice</big></label> <br> <br>
+            <input type=" number" required class="datum" maxlength="2" minlength="2" placeholder="MM">
+                <label>/</label>
+                <input type="number" required class="datum" placeholder="YY">
+        </div> <br> <br> <br>
+        <h3 class="iznos">Uplatili ste:</h3>
+        <input type="number" id="result" name="TextBox3" maxlength="2" minlength="2" value="0" disabled>
+        <label id="valuta">KM</label>
+        <br><br>
+        <input type="submit" value="Natrag" class="btn" id="natrag" onclick="natrag();">
+        <input type="submit" value="Potvrdi" class="btn" id="dalje" onclick="placeno(); return;">
+        <br><br>
+    </div>
+    <footer id="faxInfo">
+        <img src="../icons/footerlogo.jpg">
+        <div>
+            Elektrotehnički fakultet Sarajevo<br>
+            Univerzitet u Sarajevu<br>
+            Zmaja od Bosne bb<br>
+            Kampus Univerziteta u Sarajevu<br>
+            71000 Sarajevo<br>
+            Bosna i Hercegovina<br>
+            Tel: +387 33 250 700<br>
+            Fax: +387 33 250 725
+        </div>
+    </footer>
+</body>
+
+</html>

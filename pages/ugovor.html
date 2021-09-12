@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugovor o učenju</title>
+    <script src="../upis.js"></script>
+    <link rel="stylesheet" href="../styles/ugovor.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="icon" href="../icons/etf_logo.svg" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../navigation.js"></script>
+</head>
+
+<body>
+    <nav class="nav-area">
+        <ul>
+            <li id="profil"><a onclick="promijeniLokaciju('profil.html')" href="#"><span
+                        class="fas fa-user-graduate"></span>
+                    Profil</a></li>
+            <li id="dokumenti">
+                <a href="#"><span class="fas fa-file"></span> Dokumenti</a>
+                <ul>
+                    <li><a onclick="promijeniLokaciju('upis.html')" href="#">Upisni list</a></li>
+                    <li><a onclick="promijeniLokaciju('ugovor.html')" href="#">Ugovor o učenju</a></li>
+                    <li><a onclick="promijeniLokaciju('potvrda.html')" href="#">Ovjerena potvrda</a></li>
+                </ul>
+            </li>
+            <li id=" placanje"><a onclick="promijeniLokaciju('placanje.html')" href="#"><span
+                        class="fas fa-credit-card"></span> Plaćanje</a></li>
+            <li id="pitanje"><a onclick="promijeniLokaciju('pitanje.html')" href="#"><span
+                        class="fas fa-comments"></span> Forum</a></li>
+            <li id="odjava"><a href="#" onclick="odjava()"><span class="fas fa-window-close"></span> Odjava</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item mrvica"> <a href="#">Dokumenti</a></li>
+            <li class="breadcrumb-item active" aria-current="page">UGOVOR O UČENJU</li>
+        </ol>
+    </nav>
+    <div class="content">
+        <div class="part">
+            <form name="f1">
+                <div>
+                    <label>Studij</label>
+                    <input class="b" type="text" id="studij" value="AiE" disabled>
+                    <button type="button" id="b1" class="pointer uredi" onclick="uredi('studij', 'studijE')"><i
+                            class="fas fa-edit" id="studijE"></i>
+                    </button>
+                </div>
+                <br> <br>
+                <div>
+                    <label>Godina studija</label>
+                    <input class="b" type="number" id="godinaStudija" value="1" disabled style="width: 2cm;">
+                    <button type="button" id="b2" class="pointer uredi"
+                        onclick="uredi('godinaStudija', 'godinaStudijaE')"><i class="fas fa-edit"
+                            id="godinaStudijaE"></i>
+                    </button>
+                </div>
+                <br> <br>
+                <div>
+                    <label>Semestar</label>
+                    <input class="b" type="number" id="semestar" disabled value="1" style="width: 2cm;">
+                    <button type="button" id="b3" class="pointer uredi" onclick="uredi('semestar', 'semestarE')"><i
+                            class="fas fa-edit" id="semestarE"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <br> <br>
+        <div class="part">
+            <div class="inline">
+                <h3>Izborni predmeti:</h3>
+            </div>
+            <br>
+            <div class="izborni">
+                <input name="pred" type="radio" checked> <label>Interakcija čovjek - računar</label> <br>
+                <input name="pred" type="radio"> <label>Upravljanje kretanja</label> <br>
+                <input name="pred" id="drugiOdsjek" type="radio"> <label>Predmet sa drugog odsjeka</label> <br>
+                <select name="pred" id="drugiOdsjek">
+                    <option value="nsi" selected>Napredni softver inženjering (RI)</option>
+                    <option value="ts">Tehnologije sigurnosti (RI)</option>
+                    <option value="ri">Razvoj igara (RI)</option>
+                </select>
+            </div>
+            <br> <br>
+            <div class="izborni">
+                <input name="pred2" type="radio" checked> <label>Mašinsko učenje i inteligentno upravljanje</label> <br>
+                <input name="pred2" type="radio"> <label>Kognitivna robotika</label> <br>
+                <input name="pred2" id="drugiOdsjek2" type="radio"> <label>Predmet sa drugog odsjeka</label> <br>
+                <select name="pred2" id="drugiOdsjek2">
+                    <option value="rsurv" selected>Računarski sistemi u realnom vremenu (RI)</option>
+                    <option value="sdp">Softverski dizajn protokola (TK)</option>
+                    <option value="ntue">Nove tehnologije u elektroenergetici (EE)</option>
+                </select>
+            </div>
+            <br> <br>
+            <button id="nastavi" class="i" onclick="potvrdi()">Potvrdi</button>
+            <br><br>
+        </div>
+    </div>
+    <footer id="faxInfo">
+        <img src="../icons/footerlogo.jpg">
+        <div>
+            Elektrotehnički fakultet Sarajevo<br>
+            Univerzitet u Sarajevu<br>
+            Zmaja od Bosne bb<br>
+            Kampus Univerziteta u Sarajevu<br>
+            71000 Sarajevo<br>
+            Bosna i Hercegovina<br>
+            Tel: +387 33 250 700<br>
+            Fax: +387 33 250 725
+        </div>
+    </footer>
+</body>
+
+</html>

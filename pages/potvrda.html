@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovjerene potvrde</title>
+    <link rel="icon" href="../icons/etf_logo.svg" type="image/icon type">
+    <link href="../styles/navbar.css" rel="stylesheet">
+    <link href="../styles/potvrda.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../potvrda.js"></script>
+    <script src="../navigation.js"></script>
+</head>
+
+<body>
+    <nav class="nav-area">
+        <ul>
+            <li id="profil"><a onclick="promijeniLokaciju('profil.html')" href="#"><span
+                        class="fas fa-user-graduate"></span>
+                    Profil</a></li>
+            <li id="dokumenti">
+                <a href="#"><span class="fas fa-file"></span> Dokumenti</a>
+                <ul>
+                    <li><a onclick="promijeniLokaciju('upis.html')" href="#">Upisni list</a></li>
+                    <li><a onclick="promijeniLokaciju('ugovor.html')" href="#">Ugovor o učenju</a></li>
+                    <li><a onclick="promijeniLokaciju('potvrda.html')" href="#">Ovjerena potvrda</a></li>
+                </ul>
+            </li>
+            <li id=" placanje"><a onclick="promijeniLokaciju('placanje.html')" href="#"><span
+                        class="fas fa-credit-card"></span> Plaćanje</a></li>
+            <li id="pitanje"><a onclick="promijeniLokaciju('pitanje.html')" href="#"><span
+                        class="fas fa-comments"></span> Forum</a></li>
+            <li id="odjava"><a href="#" onclick="odjava()"><span class="fas fa-window-close"></span> Odjava</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item mrvica"> <a href="#">Dokumenti</a></li>
+            <li class="breadcrumb-item active" aria-current="page">POTVRDA</li>
+        </ol>
+    </nav>
+    <div class="content">
+        <h1>Izdavanje ovjerenih potvrda</h1>
+        <h2>Novi zahtjev:</h2>
+        <br>
+        <table id="tabelaZahtjeva">
+            <tr>
+                <td class="labe">Tip potvrde: </td>
+                <td><select class="form-select" aria-label="Default select example" id="selectTip">
+                        <option selected value="Potvrda o redovnom studiju">Potvrda o redovnom
+                            studiju</option>
+                        <option value="Uvjerenje o položenim ispitima">Uvjerenje o položenim ispitima</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td class="labe">Izdaje se u svrhu: </td>
+                <td>
+                    <select class="form-select" aria-label="Default select example" id="selectSvrha">
+                        <option selected value="Regulisanja stipendije">Regulisanja stipendije</option>
+                        <option value="Regulisanja prava na prevoz">Regulisanja prava na prevoz</option>
+                        <option value="Regulisanja zdravstvenog osiguranja">Regulisanja zdravstvenog osiguranja</option>
+                        <option value="Regulisanja prava na šehidsku penziju">Regulisanja prava na šehidsku penziju
+                        </option>
+                        <option value="Regulisanja prava prijave na biro za zapošljavanje">Regulisanja prava prijave na
+                            biro za zapošljavanje</option>
+                        <option value="Regulisanja solcijalnog statusa">Regulisanja solcijalnog statusa</option>
+                        <option value="Regulisanja alimentacije">Regulisanja alimentacije</option>
+                        <option value="Regulisanja dječijeg dodatka">Regulisanja dječijeg dodatka</option>
+                        <option value="Regulisanja donacije">Regulisanja donacije</option>
+                        <option value="Regulisanja ferijalne prakse">Regulisanja ferijalne prakse</option>
+                        <option value="Regulisanja penzije za civilne žrtve rata">Regulisanja penzije za civilne žrtve
+                            rata</option>
+                        <option value="Regulisanja prava na boračku penziju">Regulisanja prava na boračku penziju
+                        </option>
+                        <option value="Regulisanja prava na honorar">Regulisanja prava na honorar</option>
+                        <option value="Regulisanja prava na invalidninu">Regulisanja prava na invalidninu</option>
+                        <option value="Regulisanja prava na izdavanje pasoša">Regulisanja prava na izdavanje pasoša
+                        </option>
+                        <option value="Regulisanja prava na poreske olakšice">Regulisanja prava na poreske olakšice
+                        </option>
+                        <option value="Regulisanja prava na pristup internetu">Regulisanja prava na pristup internetu
+                        </option>
+                        <option value="Regulisanja prava na izdavanje studentske kartice">Regulisanja prava na izdavanje
+                            studentske kartice</option>
+                        <option value="Regulisanja radne vize">Regulisanja radne vize</option>
+                        <option value="Regulisanja slobodnih dana za zaposlene studente">Regulisanja slobodnih dana za
+                            zaposlene studente</option>
+                        <option value="Regulisanja studentskog kredita">Regulisanja studentskog kredita</option>
+                        <option value="Aplikacije na drugi fakultet">Aplikacije na drugi fakultet</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="forb"><input type="submit" value="Pošalji zahtjev"
+                        onclick="azurirajTabeluPotvrda(event)"></input></td>
+            </tr>
+        </table>
+        <table id="tabelaPotvrda">
+            <thead>
+                <th style="padding-right: 180px;">Tip</th>
+                <th style="padding-right: 160px;">Svrha</th>
+                <th>Datum</th>
+                <th>Stanje</th>
+            </thead>
+            <tr class="redFlex" style="border-bottom: 1px solid #4158d0; ">
+                <td>Potvrda o redovnom studiju</td>
+                <td>Regulisanja ferijalne prakse</td>
+                <td>21.6.2019.</td>
+                <td style="color: green;">završen</td>
+            </tr>
+            <hr>
+        </table>
+    </div>
+    <footer id="faxInfo">
+        <img src="../icons/footerlogo.jpg">
+        <div>
+            Elektrotehnički fakultet Sarajevo<br>
+            Univerzitet u Sarajevu<br>
+            Zmaja od Bosne bb<br>
+            Kampus Univerziteta u Sarajevu<br>
+            71000 Sarajevo<br>
+            Bosna i Hercegovina<br>
+            Tel: +387 33 250 700<br>
+            Fax: +387 33 250 725
+        </div>
+    </footer>
+</body>
+
+</html>

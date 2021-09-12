@@ -1,0 +1,54 @@
+#selectPrisutnost, #selectOcekivanja {
+    width: fit-content;
+    margin-left: 44px;
+}
+.anketaPitanje {
+    padding-left: 15px;
+}
+.content {
+    margin-left: 5px;
+}
+button{
+    position: relative;
+    color: #4158d0;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+button:hover{
+    background-color: black;
+    color: whitesmoke;
+  }
+input{
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+}
+input[type=submit]{
+    margin-left: 300px;
+    color: #4158d0;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+    text-align: center;
+}
+input[type=submit]:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+.od1do5 {
+    margin-left: 45px;
+}
+@media only screen and (max-width: 800px) {
+    .mrvica {
+        padding-left: 190px;
+    }
+    .flex {
+        flex-direction: column;
+    }
+    .content {
+        padding-left: 190px;
+        padding-right: 3px;
+    }
+}

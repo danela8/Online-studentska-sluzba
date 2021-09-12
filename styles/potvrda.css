@@ -1,0 +1,63 @@
+td, th {
+    padding: 5px;
+}
+#forb {
+    text-align: center;
+}
+.content {
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+input{
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+}
+input[type=submit]{
+    color: #4158d0;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+    text-align: center;
+}
+input[type=submit]:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+#tabelaPotvrda {
+    margin-top: 25px;
+}
+@media only screen and (max-width: 800px) {
+    .mrvica {
+        margin-left: 200px;
+    }
+    .content {
+        padding-left: 200px;
+    }
+    .redFlex {
+        display: flex;
+        flex-direction: column;
+    }
+    thead {
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .mrvica {
+        margin-left: 150px;
+    }
+    .content {
+        padding-left: 150px;
+    }
+    #tabelaZahtjeva, #tabelaPotvrda, #selectSvrha, #selectTip {
+        font-size: 12px;
+        margin-left: 1px;
+    }
+    .redFlex {
+        display: flex;
+        flex-direction: column;
+    }
+    thead {
+        display: none;
+    }
+  }

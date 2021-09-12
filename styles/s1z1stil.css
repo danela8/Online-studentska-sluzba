@@ -1,0 +1,58 @@
+#rasporedTabela, #rasporedTabela tr, #rasporedTabela td {
+  border-collapse: collapse!important;
+  border: 1px solid black!important;
+}
+#rasporedTabela td:not(.predavanje):not(.gap):not(.tutorijal):not(.vjezbe):not(.data):nth-child(even) {
+  border-right: 1px solid gray!important;
+}
+#rasporedTabela td.data {
+  border-left: 1px solid gray!important;
+}
+#rasporedTabela, #rasporedTabela tr, #rasporedTabela tr td:first-child {
+	border: none!important;
+}
+#osam {
+	text-align: right!important;
+}
+th {
+	font-weight: normal;
+}
+th.dan {
+	padding: 20px!important;
+	text-align: right!important;
+	font-size: 20px!important;
+}
+td {
+	background-color: #e6e6e6;
+}
+td.predavanje, td.tutorijal, td.vjezbe {
+	background-color: #dee6ef;
+	text-align: center;
+}
+ td:not(.predavanje), td:not(.tutorijal), td:not(.vjezbe)  {
+	min-width: 15px;
+}
+
+  @media screen and (max-width: 800px) {
+    .podnaslov {
+      margin-left: 180px;
+  }
+    tr:first-child {
+      display: none;
+      border-style: none;
+    }
+    #prvi, #drugi, #treci, #cetvrti, #peti {
+    display: flex;
+    flex-direction: column;
+  }
+  th.dan {
+    text-align: left;
+  }
+  td:empty {
+    display: none;
+    border-style: none;
+  }
+  td {
+    min-height: 50px;
+  }
+}

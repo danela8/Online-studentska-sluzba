@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="icon" href="../icons/etf_logo.svg" type="image/icon type">
+    <link href="../styles/navbar.css" rel="stylesheet">
+    <link href="../styles/profil.css" rel='stylesheet'>
+    <link href="../styles/s1z1stil.css" rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../profil.js"></script>
+    <script src="../navigation.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="nav-area">
+        <ul>
+            <li id="profil"><a onclick="promijeniLokaciju('profil.html')" href="#"><span
+                        class="fas fa-user-graduate"></span>
+                    Profil</a></li>
+            <li id="dokumenti">
+                <a href="#"><span class="fas fa-file"></span> Dokumenti</a>
+                <ul>
+                    <li><a onclick="promijeniLokaciju('upis.html')" href="#">Upisni list</a></li>
+                    <li><a onclick="promijeniLokaciju('ugovor.html')" href="#">Ugovor o učenju</a></li>
+                    <li><a onclick="promijeniLokaciju('potvrda.html')" href="#">Ovjerena potvrda</a></li>
+                </ul>
+            </li>
+            <li id=" placanje"><a onclick="promijeniLokaciju('placanje.html')" href="#"><span
+                        class="fas fa-credit-card"></span> Plaćanje</a></li>
+            <li id="pitanje"><a onclick="promijeniLokaciju('pitanje.html')" href="#"><span
+                        class="fas fa-comments"></span> Forum</a></li>
+            <li id="odjava"><a href="#" onclick="odjava()"><span class="fas fa-window-close"></span> Odjava</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active mrvica" aria-current="page"> Profil</li>
+        </ol>
+    </nav>
+    <div class="content">
+        <span class="contentFlex inzenjerskaPozadina">
+            <div class="contentFlexV">
+                <img id="profilna" class="shadow p-3 mb-5 bg-body rounded" src="../userPictures/default.png"
+                    alt="profile picture">
+                <button id="ucitaj">Učitaj sliku</button>
+                <br>
+                <table class="osnovniPodaci">
+                    <tr>
+                        <td>Smjer </td>
+                        <td class="shadow p-3 mb-5 bg-body rounded " id="smjerCelija"></td>
+                    </tr>
+                    <tr>
+                        <td>Ciklus </td>
+                        <td class="shadow p-3 mb-5 bg-body rounded " id="ciklusCelija"></td>
+                    </tr>
+                    <tr>
+                        <td>Godina </td>
+                        <td class="shadow p-3 mb-5 bg-body rounded " id="godinaCelija"></td>
+                    </tr>
+                    <tr>
+                        <td>Status </td>
+                        <td class="shadow p-3 mb-5 bg-body rounded " id=statusCelija></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <div class="contentFlexV osnovniPodaciPozadina">
+                <table class="osnovniPodaci">
+                    <tbody>
+                        <tr>
+                            <td>Ime </td>
+                            <td contenteditable="false" class="podaci" id="imeCelija"></td>
+                            <td><button class="pointer uredi" onclick="uredi('imeCelija', 'imeCelijaE')"><i
+                                        class="fas fa-edit" id="imeCelijaE"></i>
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>Prezime </td>
+                            <td contenteditable="false" id="prezimeCelija" class="podaci"></td>
+                            <td><button class="pointer uredi" onclick="uredi('prezimeCelija', 'prezimeCelijaE')"><i
+                                        class="fas fa-edit" id="prezimeCelijaE"></i>
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>Grad </td>
+                            <td contenteditable="false" id="gradCelija" class="podaci">
+                            </td>
+                            <td><button class="pointer uredi" onclick="uredi('gradCelija', 'gradCelijaE')"><i
+                                        class="fas fa-edit" id="gradCelijaE"></i>
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>Adresa </td>
+                            <td contenteditable="false" id="adresaCelija" class="podaci" class="podaci"></td>
+                            <td><button class="pointer uredi" onclick="uredi('adresaCelija', 'adresaCelijaE')"><i
+                                        class="fas fa-edit" id="adresaCelijaE"></i>
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>Broj telefona </td>
+                            <td contenteditable="false" id="telefonCelija" class="podaci"></td>
+                            <td><button class="pointer uredi" onclick="uredi('telefonCelija', 'telefonCelijaE')"><i
+                                        class="fas fa-edit" id="telefonCelijaE"></i>
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>Email </td>
+                            <td contenteditable="false" id="emailCelija" class="podaci"></td>
+                            <td><button class="pointer uredi" onclick="uredi('emailCelija', 'emailCelijaE')"><i
+                                        class="fas fa-edit" id="emailCelijaE"></i>
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>Šifra </td>
+                            <td style="border: 1px solid #c850c0;
+                            border-radius: 5px;"><input type="password" disabled id="sifraCelija"
+                                    style="min-width: 200px;" value="braco">
+                                </input></td>
+                            <td><button class="pointer uredi" onclick="uredi('sifraCelija', 'sifraCelijaE')"><i
+                                        class="fas fa-edit" id="sifraCelijaE"></i>
+                                </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </span>
+        <div class="contentFlexV">
+            <div class="podnaslov">Vaš raspored časova i vježbi</div>
+            <table id="rasporedTabela" style="margin-left: 20%;">
+                <thead>
+                    <tr class="sati">
+                        <th colspan="2" id="osam">08:00</th>
+                        <th></th>
+                        <th></th>
+                        <th colspan="3">10:00</th>
+                        <th></th>
+                        <th colspan="3">12:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th colspan="3">15:00</th>
+                        <th></th>
+                        <th colspan="3">17:00</th>
+                        <th></th>
+                        <th colspan="3">19:00</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tr id="prvi">
+                    <th class="dan">Ponedeljak</th>
+                    <div>
+                        <td></td>
+                        <td></td>
+                        <td colspan="6" class="predavanje">IČR<br>predavanje</td>
+                        <td colspan="3" class="vjezbe">IČR<br>vježbe</td>
+                        <td class="data"></td>
+                        <td colspan="6" class="predavanje">PSAU<br>predavanje</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </div>
+                </tr>
+                <tr id="drugi">
+                    <th class="dan">Utorak</th>
+                    <div>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="3" class="vjezbe">PSAU<br>vježbe</td>
+                        <td colspan="4" class="tutorijal">MR<br>tutorijal</td>
+                        <td colspan="6" class="predavanje">MR<br>predavanje</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </div>
+                </tr>
+                <tr id="treci">
+                    <th class="dan">Srijeda</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="6" class="predavanje">MUIIU<br>predavanje</td>
+                    <td colspan="6" class="gap"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="cetvrti">
+                    <th class="dan">Četvrtak</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="peti">
+                    <th class="dan">Petak</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item" style="background-color: #28282B; color: white;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    <i class="fas fa-book"> </i>Interakcija čovjek računar
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <div class="contentFlex2">
+                        <div style="margin-right: 50px;">
+                            <h4>Ispiti:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>18 bodova</td>
+                                    <td>,</td>
+                                    <td>15.10.2020.</td>
+                                </tr>
+                                <tr>
+                                    <td>13 bodova</td>
+                                    <td>,</td>
+                                    <td>16.11.2020.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4>Konsultacije:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>Utorak</td>
+                                    <td> </td>
+                                    <td>08:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Četvrtak</td>
+                                    <td> </td>
+                                    <td>09:30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Zadaće:</h4>
+                    <table class="tab" style="color: #28282B;">
+                        <tr>
+                            <td>Naziv</td>
+                            <td>Ostvareni broj bodova</td>
+                            <td>Maksimalan broj bodova</td>
+                            <td>Datum slanja</td>
+                            <td>Rok za slanje</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 1</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>20.09.2020.</td>
+                            <td>20.09.2020.</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 2</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>10.10.2020.</td>
+                            <td>10.10.2020.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="anketaOkvir">
+                        <a onclick="promijeniLokacijuZaAnketu('ocijeni.html?predmet=Interakcija+čovjek+računar')"
+                            href="#" class="anketa">Anketa</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item" style="background-color: #28282B; color: white;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    <i class="fas fa-book"> </i>Mašinsko učenje i inteligentno upravljanje
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <div class="contentFlex2">
+                        <div style="margin-right: 50px;">
+                            <h4>Ispiti:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>18 bodova</td>
+                                    <td>,</td>
+                                    <td>15.10.2020.</td>
+                                </tr>
+                                <tr>
+                                    <td>13 bodova</td>
+                                    <td>,</td>
+                                    <td>16.11.2020.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4>Konsultacije:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>Utorak</td>
+                                    <td> </td>
+                                    <td>08:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Četvrtak</td>
+                                    <td> </td>
+                                    <td>09:30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Zadaće:</h4>
+                    <table class="tab" style="color: #28282B;">
+                        <tr>
+                            <td>Naziv</td>
+                            <td>Ostvareni broj bodova</td>
+                            <td>Maksimalan broj bodova</td>
+                            <td>Datum slanja</td>
+                            <td>Rok za slanje</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 1</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>20.09.2020.</td>
+                            <td>20.09.2020.</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 2</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>10.10.2020.</td>
+                            <td>10.10.2020.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="anketaOkvir">
+                        <a onclick="promijeniLokacijuZaAnketu('ocijeni.html?predmet=Mašinsko+učenje+i+inteligentno+upravljanje')"
+                            href="#" class="anketa">Anketa</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item" style="background-color: #28282B; color: white;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    <i class="fas fa-book"> </i>Mobilna robotika
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <div class="contentFlex2">
+                        <div style="margin-right: 50px;">
+                            <h4>Ispiti:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>18 bodova</td>
+                                    <td>,</td>
+                                    <td>15.10.2020.</td>
+                                </tr>
+                                <tr>
+                                    <td>13 bodova</td>
+                                    <td>,</td>
+                                    <td>16.11.2020.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4>Konsultacije:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>Utorak</td>
+                                    <td> </td>
+                                    <td>08:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Četvrtak</td>
+                                    <td> </td>
+                                    <td>09:30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Zadaće:</h4>
+                    <table class="tab" style="color: #28282B;">
+                        <tr>
+                            <td>Naziv</td>
+                            <td>Ostvareni broj bodova</td>
+                            <td>Maksimalan broj bodova</td>
+                            <td>Datum slanja</td>
+                            <td>Rok za slanje</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 1</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>20.09.2020.</td>
+                            <td>20.09.2020.</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 2</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>10.10.2020.</td>
+                            <td>10.10.2020.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="anketaOkvir">
+                        <a onclick="promijeniLokacijuZaAnketu('ocijeni.html?predmet=Mobilna+robotika')" href="#"
+                            class="anketa">Anketa</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item" style="background-color: #28282B; color: white;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseFour">
+                    <i class="fas fa-book"> </i>Projektovanje sistema automatskog upravljanja
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                    <div class="contentFlex2">
+                        <div style="margin-right: 50px;">
+                            <h4>Ispiti:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>18 bodova</td>
+                                    <td>,</td>
+                                    <td>15.10.2020.</td>
+                                </tr>
+                                <tr>
+                                    <td>13 bodova</td>
+                                    <td>,</td>
+                                    <td>16.11.2020.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4>Konsultacije:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>Utorak</td>
+                                    <td> </td>
+                                    <td>08:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Četvrtak</td>
+                                    <td> </td>
+                                    <td>09:30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Zadaće:</h4>
+                    <table class="tab" style="color: #28282B;">
+                        <tr>
+                            <td>Naziv</td>
+                            <td>Ostvareni broj bodova</td>
+                            <td>Maksimalan broj bodova</td>
+                            <td>Datum slanja</td>
+                            <td>Rok za slanje</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 1</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>20.09.2020.</td>
+                            <td>20.09.2020.</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 2</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>10.10.2020.</td>
+                            <td>10.10.2020.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="anketaOkvir">
+                        <a onclick="promijeniLokacijuZaAnketu('ocijeni.html?predmet=Projektovanje+sistema+automatskog+upravljanja')"
+                            href="#" class="anketa">Anketa</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item" style="background-color: #28282B; color: white;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                <button class="accordion-button collapsed padajuceDugme" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseFive">
+                    <i class="fas fa-book"> </i> Zaštita i upravljanje elektroenergetskih sistema
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingFive">
+                <div class="accordion-body">
+                    <div class="contentFlex2">
+                        <div style="margin-right: 50px;">
+                            <h4>Ispiti:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>18 bodova</td>
+                                    <td>,</td>
+                                    <td>15.10.2020.</td>
+                                </tr>
+                                <tr>
+                                    <td>13 bodova</td>
+                                    <td>,</td>
+                                    <td>16.11.2020.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4>Konsultacije:</h4>
+                            <table class="tab" style="color: #28282B;">
+                                <tr>
+                                    <td>Utorak</td>
+                                    <td> </td>
+                                    <td>08:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Četvrtak</td>
+                                    <td> </td>
+                                    <td>09:30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Zadaće:</h4>
+                    <table class="tab" style="color: #28282B;">
+                        <tr>
+                            <td>Naziv</td>
+                            <td>Ostvareni broj bodova</td>
+                            <td>Maksimalan broj bodova</td>
+                            <td>Datum slanja</td>
+                            <td>Rok za slanje</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 1</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>20.09.2020.</td>
+                            <td>20.09.2020.</td>
+                        </tr>
+                        <tr>
+                            <td>Zadaća br. 2</td>
+                            <td>5 bodova</td>
+                            <td>5 bodova</td>
+                            <td>10.10.2020.</td>
+                            <td>10.10.2020.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="anketaOkvir">
+                        <a onclick="promijeniLokacijuZaAnketu('ocijeni.html?predmet=Zaštita+i+upravljanje+elektroenergetskih+sistema')"
+                            href="#" class="anketa">Anketa</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="faxInfo">
+        <img src="../icons/footerlogo.jpg">
+        <div>
+            Elektrotehnički fakultet Sarajevo<br>
+            Univerzitet u Sarajevu<br>
+            Zmaja od Bosne bb<br>
+            Kampus Univerziteta u Sarajevu<br>
+            71000 Sarajevo<br>
+            Bosna i Hercegovina<br>
+            Tel: +387 33 250 700<br>
+            Fax: +387 33 250 725
+        </div>
+    </footer>
+</body>
+
+</html>

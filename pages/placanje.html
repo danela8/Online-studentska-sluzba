@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placanje</title>
+    <link rel="stylesheet" href="../styles/placanje.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="icon" href="../icons/etf_logo.svg" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../placanje.js"></script>
+    <script src="../navigation.js"></script>
+</head>
+
+<body>
+    <nav class="nav-area">
+        <ul>
+            <li id="profil"><a onclick="promijeniLokaciju('profil.html')" href="#"><span
+                        class="fas fa-user-graduate"></span>
+                    Profil</a></li>
+            <li id="dokumenti">
+                <a href="#"><span class="fas fa-file"></span> Dokumenti</a>
+                <ul>
+                    <li><a onclick="promijeniLokaciju('upis.html')" href="#">Upisni list</a></li>
+                    <li><a onclick="promijeniLokaciju('ugovor.html')" href="#">Ugovor o učenju</a></li>
+                    <li><a onclick="promijeniLokaciju('potvrda.html')" href="#">Ovjerena potvrda</a></li>
+                </ul>
+            </li>
+            <li id=" placanje"><a onclick="promijeniLokaciju('placanje.html')" href="#"><span
+                        class="fas fa-credit-card"></span> Plaćanje</a></li>
+            <li id="pitanje"><a onclick="promijeniLokaciju('pitanje.html')" href="#"><span
+                        class="fas fa-comments"></span> Forum</a></li>
+            <li id="odjava"><a href="#" onclick="odjava()"><span class="fas fa-window-close"></span> Odjava</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active mrvica" aria-current="page"> Plaćanje</li>
+        </ol>
+    </nav>
+    <div class="content">
+        <div>
+            <div class="okvir">
+                <div id="progresLjubicasti"></div>
+            </div>
+            <br>
+            <div id="detalji">
+                <div class="tekst">Detalji uplate </div>
+                <div class="tekst">Detalji kartice</div>
+            </div>
+        </div>
+        <br>
+        <h3>Odaberi način plaćanja:</h3>
+        <input type="radio" id="card" name="type" value="card">
+        <label for="card"><img
+                src="https://buymorefans.ca/wp-content/uploads/2015/11/credit-cards-logos-200px-high-WEB.png"
+                alt="visa/mastercard/americanexpress" width="150px"></label><br>
+        <input type="radio" id="paypal" name="type" value="paypal">
+        <label for="paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg"
+                alt="paypal" width="80" height="45"></label><br>
+        <br>
+
+        <h3>Uplati za: </h3>
+
+        <form name="form1">
+            <div class="flex">
+                <div>
+                    <input type="checkbox" id="ISSS" class="aa" value="10" onclick="chkcontrol(0)">
+                    <label for="ISSS" class="uplata"> ISSS </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="komispit" class="aa novired" value="50" onclick="chkcontrol(1)">
+                    <label for="komispit" class="uplata" id="komispitLabel"> Komisijski ispit</label><br><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div>
+                    <input type="checkbox" id="skolarina" class="aa" value="900" onclick="chkcontrol(2)">
+                    <label for="skolarina" class="uplata"> Školarinu </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="zavrsni" class="aa novired" value="130" onclick="chkcontrol(3)">
+                    <label for="zavrsni" class="uplata" id="zavrsniLabel"> Odbrana završnog rada</label><br><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div>
+                    <input type="checkbox" id="kosuljice" class="aa" value="10" onclick="chkcontrol(4)">
+                    <label for="kosuljice" class="uplata"> Ispitne košuljice </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="nepolozeni" class="aa novired" value="10" onclick="chkcontrol(5)">
+                    <label for="nepolozeni" id="nepolozeniLabel" class="uplata">Naknada za nepoložene
+                        ispite</label><br><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div>
+                    <input type="checkbox" id="ispis" class="aa" value="50" onclick="chkcontrol(6)">
+                    <label for="ispis" class="uplata"> Ispis </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="diploma" class="aa novired" value="200" onclick="chkcontrol(7)">
+                    <label for="diploma" id="diplomaLabel" class="uplata"> Prijevremenu diplomu</label><br> <br> <br>
+                </div>
+            </div>
+        </form>
+        <h3 class="iznos">Iznos:</h3>
+        <div>
+            <input type="number" id="result" name="TextBox3" value="0" disabled>
+            <label id="valuta">KM</label>
+        </div>
+        <br>
+        <input type="submit" value="Dalje" class="btn" id="dalje" onclick="next(); return;">
+    </div>
+    <br>
+    <footer id="faxInfo">
+        <img src="../icons/footerlogo.jpg">
+        <div>
+            Elektrotehnički fakultet Sarajevo<br>
+            Univerzitet u Sarajevu<br>
+            Zmaja od Bosne bb<br>
+            Kampus Univerziteta u Sarajevu<br>
+            71000 Sarajevo<br>
+            Bosna i Hercegovina<br>
+            Tel: +387 33 250 700<br>
+            Fax: +387 33 250 725
+        </div>
+    </footer>
+</body>
+
+</html>

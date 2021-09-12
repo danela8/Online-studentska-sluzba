@@ -1,0 +1,55 @@
+.dugme {
+    border: rgb(64, 0, 94);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    cursor: pointer;
+    border: 1px solid black;
+    left: 23%;
+    bottom: 50%;
+    border-radius: 5px;
+    margin: 5px;
+}
+.dugme:hover {
+    background-color: rgb(70, 61, 206);
+    color: white;
+}
+.content{
+    padding-left: 20%;
+}
+textarea {
+    resize: none;
+  }
+.pitanje{
+    border: 3px solid black;
+    background-color:  mediumpurple;
+    width: 800px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 0px;
+    font-size:larger;
+    
+}
+.odgovor{
+border: 3px solid black;
+width: 800px;
+padding-top: 5px;
+padding-bottom: 5px;
+font-size:large;
+margin-bottom: 30px;
+}
+@media only screen and (max-width: 800px) {
+    textarea {
+        width: 200px;
+        height: 70px;
+    }
+    .content {
+        margin-left: 80px;
+    }
+    .pitanje {
+        font-size: medium;
+        width: 300px;
+    }
+    .odgovor {
+        font-size: small;
+        width: 300px;
+    }
+}

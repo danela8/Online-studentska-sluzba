@@ -1,0 +1,98 @@
+.part {
+    max-width: auto;
+    margin-left: 60px;
+  }
+.b {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 37%;
+  }
+.c {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    width: 1cm;
+    position: relative;
+    left: 34.6%;
+}
+.d {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 37%;
+}
+.e {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 32%;
+}
+.f, .e {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 37%;
+}
+.g {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 26.2%;
+}
+.i {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 20%;
+}
+.j {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 44%;
+}
+input{
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+}
+input[type=submit]{
+    color: #4158d0;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+}
+input[type=submit]:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+.part{
+    padding: 25px;
+}
+.flex{
+    display: flex;
+}
+@media only screen and (max-width: 800px) {
+    .mrvica {
+        padding-left: 200px;
+    }
+    #naslov {
+        padding-left: 100px;
+    }
+    .forma {
+        padding-left: 110px;
+    }
+    .flex {
+        flex-direction: column;
+    }
+    #nastavi {
+        margin-left: 130px;
+    }
+    #uvezi {
+        margin-left: 50px;
+    }
+    .c {
+        left: 10%;
+    }
+}

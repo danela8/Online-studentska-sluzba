@@ -1,0 +1,123 @@
+#profilna{
+    width: 400px;
+    height: 350px;
+    border: 1px solid #ddd;
+    border-radius: 15%;
+}
+.contentFlex{
+    display: flex;
+    background: black;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contentFlex2{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contentFlexV{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin: 20px;
+}
+label{
+    font-size: 15px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+}
+#ucitaj, .uredi{
+    color: #4158d0;
+}
+#ucitaj{
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+}
+#ucitaj:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+.uredi:hover{
+    color: black;
+}
+.podaci{
+    min-width: 200px;
+    border: 1px solid #c850c0;
+    border-radius: 5px;
+}
+.uredi{
+    border: none;
+}
+.osnovniPodaci > tbody > tr > td{
+    font-size: 20px;
+    padding: 10px;
+}
+.osnovniPodaci{
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.inzenjerskaPozadina{
+    background-image: url("../icons/background.jpeg");
+}
+.osnovniPodaciPozadina{
+    background-color: seashell;
+}
+.padajuceDugme{
+    text-align: center;
+}
+.anketa {
+    color: #c850c0;
+    border: 1px solid #c850c0;
+    border-radius: 5px;
+    size: 20px;
+    padding: 25px;
+}
+.anketaOkvir {
+    margin-top: 15px;
+    background-color: white;
+    width: 18px;
+    background-color: #c850c0;
+}
+.padajuciDio {
+    background-color: #28282B;
+     color: white;
+}
+.tab td {
+    padding: 10px;
+}
+.tab th {
+    text-decoration-thickness: bold;
+}
+i {
+    margin-right: 10px;
+}
+@media only screen and (max-width: 800px) {
+    .mrvica {
+        padding-left: 190px;
+    }
+    .contentFlex {
+        padding-left: 120px;
+    }
+    .accordion-header {
+        width: 200px;
+        margin-left: 200px;
+    }
+    .accordion-body {
+        margin-left: 180px;
+    }
+    .tab {
+        font-size: 11px;
+    }
+}
+@media only screen and (min-width: 541px) {
+    .accordion-body {
+        margin-left: 180px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .accordion-body {
+        margin-left: 110px;
+    }
+}

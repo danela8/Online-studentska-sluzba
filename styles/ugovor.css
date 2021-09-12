@@ -1,0 +1,97 @@
+.part{
+  padding: 25px;
+}
+.b {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 150px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.j {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 44%;
+}
+input{
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+}
+.i{
+  position: relative;
+  color: #4158d0;
+  font-size: 15px;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.i:hover{
+  background-color: black;
+  color: whitesmoke;
+}
+.uredi{
+  border: none;
+  color: #4158d0;
+}
+.uredi:hover{
+  color: black;
+}
+#b1 {
+  margin-left: 260px;
+}
+#b2 {
+  margin-left: 100px;
+}
+#b3 {
+  margin-left: 135px;
+}
+.inline{
+  display: flex;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 800px) {
+  .mrvica {
+      padding-left: 200px;
+  }
+  .b, form label {
+    margin-left: 130px;
+  }
+  #nastavi {
+    margin-left: 300px;
+  }
+}
+@media only screen and (min-width: 630px) {
+  .b, form label {
+    margin-left: 170px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .izborni {
+    margin-left: 100px;
+  }
+  .b {
+    margin-left: 75px;
+  }
+  form label {
+    font-size: 15px;
+    margin-left: 100px;
+  }
+}
+@media only screen and (min-width: 511px) {
+  .izborni {
+    margin-left: 150px;
+  }
+}
+@media only screen and (min-width: 671px) {
+  .izborni {
+    margin-left: 250px;
+  }
+}

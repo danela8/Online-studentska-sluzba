@@ -1,0 +1,110 @@
+a{
+  text-transform: uppercase;
+}
+.nav-area ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-area ul ul{
+  display: none;
+  position: absolute;
+  padding: 0;
+  min-width: 160px;
+  top: 53px;
+  bottom: 100%;
+}
+.nav-area ul li:hover > ul {
+  display: block;
+  z-index: 2;
+}
+.nav-area::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.nav-area ul ul li:hover a {
+  color: white;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+.nav-area > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    top: 0;
+    width: 100%;
+  }
+  .nav-area ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+  }
+  .nav-area ul li:hover a {
+      color: #c850c0;
+      background: black;
+  }
+  i {
+    font-size: 25px;
+  }
+  .podnaslov{
+    font-size: 25px;
+    font-weight: bolder;
+    color: black;
+    display: grid;
+    text-align: center;
+    padding: 40px;
+  }
+  .mrvica{
+    margin-left: 5px;
+  }
+  #faxInfo{
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    text-align: center;
+    padding: 50px;
+}
+footer{
+    display: flex;
+}
+footer > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+@media only screen and (max-width: 800px) {
+  .nav-area > ul > li {
+    border-right: 1px solid whitesmoke;
+    display: relative;
+  }
+  .nav-area ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: fixed;
+    overflow: visible;
+    width: 120px;
+    z-index: 3;
+  }
+  .nav-area ul ul{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    top: 55px;
+    bottom: 100%;
+    left: 119px;
+  }
+}
+@media only screen and (min-width: 801px) {
+  .nav-area > ul > li {
+    float: left;
+    border-right: 1px solid whitesmoke;
+    min-width: 200px;
+    display: relative;
+  }
+}
